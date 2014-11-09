@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+html(lang="zh-cn")
+	head
+		meta(charset="UTF-8")
+		title #{title}
+		style.
+			body {padding:20px;font:14px/2 arial;}
+			span {color:#900; font-weight: bold;}   			
+	body
+		input#fileElem(type='file', multiple='', accept='image/*', onchange='handleFiles(this)')
+		p!= '当前位置：X: <span id="dx">0</span>；Y: <span id="dy">0</span>'
+		#fileList(style='width:100%;overflow:auto;background:#f8f8f8;cursor:crosshair;')
+		script(src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js")
+		script(src="getcood.js")
+
+
+		

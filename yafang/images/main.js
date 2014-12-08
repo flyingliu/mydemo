@@ -1,4 +1,4 @@
-var nodes = ['#img1','#img2','#img3','#img4'];
+var nodes = ['.layer1','.layer2','.layer3','.layer4'];
 var step = nodes.length;
 
 function addact(){
@@ -8,10 +8,10 @@ function addact(){
 		ev.preventDefault();
 	});	
 
-	touch.on("#mm", 'swiperight', function(ev){
-		var _this = $(this);
-	  _this.addClass("BounceOutR");
-	  $('.layert').addClass("BounceOutR");
+	touch.on("#mm", 'swipeleft', function(ev){
+		var _this = $("#mm");
+	  _this.addClass("BounceOutL");
+	  $('.layert').addClass("BounceOutL");
 	  setTimeout(function(){
 	  	_this.hide();
 	  	$('.layert').hide();
@@ -21,20 +21,22 @@ function addact(){
 $(function(){
 
 	for(var i=0;i<step;i++){
-		$(nodes[i]).hide();
+		$(nodes[i]).find('img').hide();
 		(function(i){
 
 			touch.on(nodes[i], 'touchstart', function(ev){
 				ev.preventDefault();
 			});
 
-			touch.on(nodes[i], 'swiperight', function(ev){
-				var _this = $(nodes[i]).parent();
-				var _thisprev = $(nodes[i]).parent().prev();
-			  _this.addClass("BounceOutR");
-			  _thisprev.show().addClass('FadeInL');
+			touch.on(nodes[i], 'swipeleft', function(ev){
+				var _this = $(nodes[i]);
+				var _thisprev = $(nodes[i]).prev();
+			  _this.addClass("BounceOutL");
+			  _thisprev.show().addClass('FadeInR');
 			  setTimeout(function(){
 			  	_this.hide();
+
+			  	$(nodes[i+1]).find("img").show().addClass('BounceIn');
 			  	step--;
 			  	if(step==0){
 			  		addact();	
@@ -42,15 +44,16 @@ $(function(){
 			  },1000);	
 			});
 
-		  setTimeout(function(){
-		  	$(nodes[i]).show();
-		  	$(nodes[i]).addClass('BounceIn');
-		  },500*i);			
+		  // setTimeout(function(){
+		  // 	$(nodes[i]).find("img").show().addClass('BounceIn');
+		  // },500*i);	
 
-		})(i);	
+		})(i);
+
+		setTimeout(function(){
+	  	$(nodes[0]).find("img").show().addClass('BounceIn');
+	  },500);	
+
 	}
-
-
-
 })
 

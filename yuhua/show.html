@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Squadfree - Free bootstrap 3 one page template</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+  <!-- Fonts -->
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/animate.css" rel="stylesheet" />
+  <!-- Squad theme CSS -->
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="color/default.css" rel="stylesheet" />
+  <style>
+
+    .wall {padding:100px 10px 10px 10px;}
+    #plist {overflow: hidden;}
+    #plist dd {width:221px;}
+
+  </style>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+  <!-- Preloader -->
+  <div id="preloader">
+    <div id="load"></div>
+  </div>
+
+  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          <h1>Yuhua Fashion</h1>
+        </a>
+      </div>
+
+
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="#intro">首页</a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">关于我们 <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">公司介绍</a>
+              </li>
+              <li>
+                <a href="#">发展历程</a>
+              </li>
+              <li>
+                <a href="#">工厂规模</a>
+              </li>
+              <li>
+                <a href="#">设计中心</a>
+              </li>
+            </ul>           
+          </li>
+      
+          <li>
+            <a href="#service">新闻中心</a>
+          </li>
+          <li>
+            <a href="#class">典型客户</a>
+          </li>
+          <li>
+            <a href="#contact">加入我们</a>
+          </li>
+          <li>
+            <a href="#contact">联系我们</a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              产品图库 <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">裤子</a>
+              </li>
+              <li>
+                <a href="#">男装</a>
+              </li>
+              <li>
+                <a href="#">女装</a>
+              </li>
+              <li>
+                <a href="#">童装</a>
+              </li>
+            </ul>             
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+
+  <!-- Section: intro -->
+  <section id="photowall" class="wall">
+    <dl id="plist">
+      <dd class="item"><img src="/img/v1/1.jpg" width="100%"></dd>
+      <dd class="item"><img src="/img/v1/2.jpg" width="100%"></dd>
+      <dd class="item"><img src="/img/v1/3.jpg" width="100%"></dd>
+      <dd class="item"><img src="/img/v1/4.jpg" width="100%"></dd>
+      <dd class="item"><img src="/img/v1/5.jpg" width="100%"></dd>
+      <dd class="item"><img src="/img/v1/6.jpg" width="100%"></dd>
+      <dd class="item"><img src="/img/v1/7.jpg" width="100%"></dd>
+      <dd class="item"><img src="/img/v1/8.jpg" width="100%"></dd>
+      <dd class="item"><img src="/img/v1/9.jpg" width="100%"></dd>
+      <dd class="item"><img src="/img/v1/10.jpg" width="100%"></dd>
+      <dd class="item"><img src="/img/v1/11.jpg" width="100%"></dd>
+      <dd class="item"><img src="/img/v1/12.jpg" width="100%"></dd>
+      <dd class="item"><img src="/img/v1/13.jpg" width="100%"></dd>
+      <dd class="item"><img src="/img/v1/14.jpg" width="100%"></dd>
+    </dl>
+  
+
+  </section>
+  <!-- /Section: intro -->
+
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <div class="wow shake" data-wow-delay="0.4s">
+            <div class="page-scroll marginbot-30">
+              <a href="#intro" id="totop" class="btn btn-circle">
+                <i class="fa fa-angle-double-up animated"></i>
+              </a>
+            </div>
+          </div>
+          <p>&copy;Copyright 2014 - Yuhua Fashion Co., Limited. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript Files -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/jquery.scrollTo.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/freewall.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script src="js/custom.js"></script>
+  <script type="text/javascript">
+      var wall = new freewall("#plist");
+      wall.reset({
+        selector: '.item',
+        animate: true,
+        cellW: 200,
+        cellH: 'auto',
+        onResize: function() {
+          wall.fitWidth();
+        }
+      });
+      
+      wall.container.find('.item img').load(function() {
+        wall.fitWidth();
+        console.log(1);
+      });
+
+
+    </script>
+</body>
+</html>

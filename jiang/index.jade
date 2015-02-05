@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+html(lang="en" ng-app="app")
+  head
+    meta(charset="UTF-8")
+    title 大抽奖！！！
+    link(rel="stylesheet", href="images/bootstrap.css")
+    link(rel="stylesheet", href="images/style.css")
+
+  body(ng-controller='homeCtrl')
+    .container-fluid.s1
+      .control(ng-click="start()")
+      .title
+        h1.name {{formData.name}}
+        p.totel 数量：{{formData.totel}} 名
+      .anim
+        .num1 0
+        .num2 0
+        .num3 0
+      .winer
+        .curtitle {{formData.name}}
+        ul
+          li(ng-repeat="item in curList track by $index") {{item}}
+
+    .container.set
+      .row
+        .col-md-12
+          h2(style="margin:20px 0;") 设置抽奖选项
+          form(role='form')
+            .row
+              .col-md-4
+                .form-group
+                  label(for='name') 奖项名称
+                    input(type="text"  class="form-control name" ng-model="formData.name" ng-blur="createArr();")
+                .checkbox
+                  label
+                    input(type='checkbox' ng-model="formData.include")
+                    |  排除得奖人再次抽奖
+
+              .col-md-4
+                .form-group
+                  label(for='name') 奖项数量
+                    input(type="number"  class="form-control" ng-model="formData.totel")
+              .col-md-4
+                .form-group
+                  label(for='exampleInputPassword1') 设置抽奖号码段
+                    input(type="number" value="1"  class="form-control minNum" ng-model="formData.minNum")
+                    span -
+                    input(type="number" value="30" class="form-control maxNum" ng-model="formData.maxNum")
+
+        .col-md-8.col-md-offset-4
+          div(style="padding:10px 0 50px 0")
+            button.btn.btn-lg.btn-warning.setcon(type='button') 设置完成
+
+    script(src="images/jquery.js")
+    script(src="images/underscore.js")
+    script(src="images/angular.min.js")
+    script(src="images/store.min.js")
+    script(src="images/bootstrap.js")
+    script(src="images/anmain.js")

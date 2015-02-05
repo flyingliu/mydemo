@@ -1,0 +1,35 @@
+// transition:all .5s ease-in .1s;
+
+$bg:#fae7e2;
+$sw:640px;
+$sh:100%;
+$pink:#e4007e;
+$dfont:bold 46px/1.2 arial;
+$bfont:bold 76px/1.2 arial;
+@mixin center {position: absolute;margin:0 auto; left:0;right:0;}
+
+html,body { padding:0;margin:0;width: 100%; overflow-x:hidden;}
+
+.s1 { width:19.2rem; height:10rem; background:url(bg.jpg) no-repeat #200C01; background-size:100% auto; position: relative;
+  .control {background:url(ctrl.png) no-repeat;width:.76rem; height:1.58rem; position: absolute;left:14.96rem;top:5.89rem;transform-origin:0 1.48rem; background-size:100% 100%;
+  }
+  .go {transform:scaleY(-1);transition: all .3s linear;}
+
+  .title {position: absolute;top:4.35rem;left:6.48rem; width:4.24rem; text-align: center;
+    h1 {color:#fff; margin:0;font:.4rem/.45rem arial;}
+    p {color:#fff; margin:0;font:.2rem/.3rem arial;}
+  }
+  .anim { position: absolute;top:5.8rem;left:5.58rem;
+    div { float:left;width:1.64rem;height:2.37rem; margin-right:.46rem; font:1.5rem/2.37rem arial; text-align: center; }
+  }
+}
+
+.winer { position: absolute;left:12.38rem;top:5.03rem; width:1.68rem;
+  .curtitle { font:.18rem/.35rem arial; text-align: center; color:#fff;}
+  ul {padding:20px 30px; margin:0;list-style:none; font:.18rem/.24rem arial;background:#fff; margin:.1rem;}
+}
+
+
+
+
+

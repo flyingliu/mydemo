@@ -1,8 +1,4 @@
 
-// <img id="cvs_1_0" data-src="http://y0.ifengimg.com/a/2015_11/274b82278252849.jpg" class="lazyload"/>
-// id 为唯一标识
-// data-src 为预加载图片地址,图片地址可以跨域
-// class="lazyload" 为执行预加载的样式名称
 
 $(function() {
 
@@ -22,7 +18,7 @@ $(function() {
       var img = new Image();
       img.index = i;
       img.id = imgId;
-      img.crossorigin = "*"; //canvas跨域调用图片
+      img.crossorigin = "anonymous";
       img.onload = function() {
         var _this = this;
         var zCvs = $('#' + this.id);
@@ -45,7 +41,7 @@ $(function() {
             document.body.removeChild(cvs);
           }, 200);
         } catch (ex) {
-          console.log(ex);
+
         }
       }
       img.src = lazyloadImage[i].getAttribute('data-src');

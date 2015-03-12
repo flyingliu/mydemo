@@ -22,7 +22,7 @@ $(function() {
       var img = new Image();
       img.index = i;
       img.id = imgId;
-      img.crossorigin = "anonymous"; //canvas跨域调用图片
+      img.crossorigin = "*"; //canvas跨域调用图片
       img.onload = function() {
         var _this = this;
         var zCvs = $('#' + this.id);

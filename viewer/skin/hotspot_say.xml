@@ -1,0 +1,40 @@
+<krpano>
+  <!-- Hotspot Style -->
+  <data name="textfield_css">
+    color:#ffffff; font-family:微软雅黑;text-align:left; font-size:20px;padding:0;background:rgba(0,0,0,.5);  padding:1em; border:1px solid #ffffff; line-height:1.4; max-width:16em;  border-radius:5px;  height:auto;
+  </data>
+  <data name="bg_css">
+    background:rgba(0,0,0,0);
+  </data>
+  <data name="htmltext">
+  </data>
+
+  <action name="drawHotspot">
+    <!-- Concat strings -->
+    txtadd(icon_layer_name, get(name), _icon);
+    txtadd(text_layer_name, get(name), _text);
+    txtadd(parent_hs, 'hotspot[', get(name), ']');
+    txtadd(css_bg, 'background:url(', get(icon), '); background-size:cover;background-color:#900;');
+
+    <!-- Draw icon layer -->
+    addlayer(get(icon_layer_name));
+    txtadd(layer[get(icon_layer_name)].parent, 'hotspot[', get(name), ']');
+    set(layer[get(icon_layer_name)].css, get(css_bg));
+    layer[get(icon_layer_name)].loadstyle(hotspot_icon);
+
+
+    <!-- Draw text layer -->
+    addplugin(get(text_layer_name));
+    txtadd(plugin[get(text_layer_name)].parent, 'hotspot[', get(name), ']');
+    txtadd(plugin[get(text_layer_name)].html, get(text));
+    plugin[get(text_layer_name)].loadstyle(hotspot_text);
+  </action>
+
+  <style name="hotspot_basic" url="%SWFPATH%/plugins/textfield.swf"  roundedge="10"   width="38" height="39" children="false" css="data:bg_css" html="" background="false" multiline="false" autosizemargin="0"  onloaded="drawHotspot();" />
+
+  <style name="hotspot_icon"  url="%SWFPATH%/img/1.png" roundedge="54"  type="image" align="left top" y="0" x="0" width="38" padding="0" height="39" zorder="9" background="false" css=" background:#000000;"   />
+
+  <style name="hotspot_text" url="%SWFPATH%/plugins/textfield.swf" align="left bottom" y="50" x="0" css="data:textfield_css" autowidth="false" alpha="0"  background="false" wordwrap="true" />
+
+
+</krpano>

@@ -1,0 +1,16 @@
+<krpano>
+	<action name="lookIntoHotspot">
+		tween(scale, 0.5, 0.5);
+		tween(zoom, -0.1, 0.5);
+		tween(alpha, 0, 0.5);
+		set(original_hlookat, get(view.hlookat));
+		set(original_vlookat, get(view.vlookat));
+		looktohotspot();
+		txtadd(panopath, '%SWFPATH%/../', get(loadpath), get(to_pano_id), '.pano.xml');
+		loadpano(get(panopath), null, KEEPSCENES, BLEND(1));
+		set(view.vlookat, get(to_vlookat));
+		set(view.hlookat, get(to_hlookat));
+		set(current_pano_id, get(to_pano_id));
+	</action>
+	<style name="hotspot_clickable" onclick="lookIntoHotspot();" />
+</krpano>

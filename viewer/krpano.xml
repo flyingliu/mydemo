@@ -1,0 +1,42 @@
+<krpano onstart="loadscene('view');">
+  <include url="%SWFPATH%/skin/skin.xml" />
+  <include url="%SWFPATH%/skin/hotspot_say.xml" />
+
+     <scene name="view">
+     	<view fov="90" fovmax="130" hlookat="-50" vlookat="-3" />
+
+     	<!-- pano -->
+     	<preview url="panos/p1/preview.jpg" />
+     	<image>
+     		<cube url="panos/p1/pano_%s.jpg" />
+     	</image>
+          <hotspot 
+               name="bro" 
+               style="hotspot_basic" 
+               ath="90" 
+               atv="180"
+               destalpha="0"
+               type="image"
+               alpha="1"
+               url="/img/1.png"
+               onclick="switch(destalpha,1,0);tween(plugin['bro_text'].alpha,get(destalpha))"
+               text="起身休息下，享受午饭吧。，享受午饭吧。"
+
+             />
+
+          <hotspot 
+               name="broa" 
+               style="hotspot_basic" 
+               ath="60" 
+               atv="180"
+               destalpha="0"
+               type="image"
+               alpha="1"
+               url="/img/1.png"
+               onclick="switch(destalpha,1,0);tween(plugin['broa_text'].alpha,get(destalpha))"
+               text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aspernatur id culpa veritatis non fuga vel in veniam asperiores, 。"
+
+             />
+     </scene>
+
+</krpano>

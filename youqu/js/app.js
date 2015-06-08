@@ -25,7 +25,7 @@ touchApp.config(['$stateProvider', '$urlRouterProvider',
 
     $stateProvider.state("home", {
       url: "/",
-      templateUrl: './../home.html',
+      templateUrl: '../home.html',
       resolve: {
         data: ['$q',
           function($q) {
@@ -41,7 +41,7 @@ touchApp.config(['$stateProvider', '$urlRouterProvider',
 
     $stateProvider.state("flyleaf", {
       url: "/flyleaf",
-      templateUrl: './../flyleaf.html',
+      templateUrl: '../flyleaf.html',
       resolve: {
         data: ['$q',
           function($q) {
@@ -57,7 +57,7 @@ touchApp.config(['$stateProvider', '$urlRouterProvider',
 
     $stateProvider.state("test", {
       url: "/test",
-      templateUrl: './../test.html',
+      templateUrl: '../test.html',
       controller: 'testCtrl',
       resolve: {
         data: ['$q',
@@ -74,7 +74,7 @@ touchApp.config(['$stateProvider', '$urlRouterProvider',
 
     $stateProvider.state("view", {
       url: "/view",
-      templateUrl: './../view.html',
+      templateUrl: '../view.html',
       controller: 'viewCtrl',
       resolve: {
         data: ['$q',

@@ -58,10 +58,10 @@ function checkOs() {
 
 function share() {
   if(os.isPhone || os.isIpad){
-    $(".android-down").fadeIn(10).find("img").attr("src","/images/ios.png");
+    $(".android-down").fadeIn(10).find("img").attr("src","../images/ios.png");
     return false;
   } else {
-    $(".android-down").fadeIn(10).find("img").attr("src","/images/an.png");
+    $(".android-down").fadeIn(10).find("img").attr("src","../images/an.png");
     return false;
   }
 }
@@ -120,12 +120,14 @@ function($scope, $interval) {
   $scope.start = function(){
     if (flag) {
       flag = false;
+      $('.time').show(100);
       $(".info").hide(100);
       var timer = $interval(function(){
         if ($scope.time>0) {
           $scope.time--;
         } else {
           $interval.cancel(timer);
+          $('.time').hide(100);
           $('.over').show(100);
           flag = true;
         }
